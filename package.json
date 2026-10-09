@@ -1,0 +1,21 @@
+{
+  "name": "verdant",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@12.9.1",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --no-bail run dev",
+    "dev:api": "pnpm --filter @verdant/server run dev",
+    "dev:web": "pnpm --filter @verdant/web run dev",
+    "build": "pnpm -r run build",
+    "build:web": "pnpm --filter @verdant/web run build",
+    "start": "pnpm --filter @verdant/server run start",
+    "preview": "pnpm --filter @verdant/web run preview",
+    "db:check": "pnpm --filter @verdant/server run db:check",
+    "health": "curl -s http://127.0.0.1:8787/health",
+    "check": "pnpm run build && pnpm run db:check"
+  }
+}
